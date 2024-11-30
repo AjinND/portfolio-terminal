@@ -1,7 +1,7 @@
 import { useCallback, useState } from "react";
 
 // Custom hook for managing input history
-const userInputHistory = (initialHistory = []) => {
+const useInputHistory = (initialHistory = []) => {
   const [history, setHistory] = useState<string[]>(initialHistory);
   const [currentHistoryIndex, setCurrentHistoryIndex] = useState(-1);
   const [currentInput, setCurrentInput] = useState("");
@@ -60,4 +60,4 @@ const userInputHistory = (initialHistory = []) => {
   };
 };
 
-export default userInputHistory;
+export default useInputHistory;

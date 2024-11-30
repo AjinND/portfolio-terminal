@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useRef, useEffect } from "react";
-import userInputHistory from "./hooks/userInputHistory";
+import useInputHistory from "./hooks/userInputHistory";
 
 export default function Home() {
   const [output, setOutput] = useState([
@@ -130,7 +130,7 @@ export default function Home() {
   };
 
   const { currentInput, addToHistory, navigateHistory, setCurrentInput } =
-    userInputHistory();
+    useInputHistory();
 
   return (
     <div>
