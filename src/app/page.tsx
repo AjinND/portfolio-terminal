@@ -1,11 +1,11 @@
 "use client";
-import { useState, useRef, useEffect, useCallback } from "react";
+import { useState, useRef, useEffect } from "react";
 import { ChevronRight } from "lucide-react";
 import useInputHistory from "./hooks/userInputHistory";
 
 export default function EnhancedPortfolio() {
 
-  const { history, currentInput, addToHistory, navigateHistory, setCurrentInput } = useInputHistory();
+  const { history, currentInput, addToHistory, setCurrentInput } = useInputHistory();
   const [output, setOutput] = useState<string[]>([]);
   const [fontSize, setFontSize] = useState<number>(14);
   const [textColor, setTextColor] = useState<string>("#00FF00");
