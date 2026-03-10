@@ -146,7 +146,7 @@ export function ParticleBackground() {
             <Canvas
                 camera={{ position: [0, 0, 10], fov: 75 }}
                 dpr={typeof window !== 'undefined' ? Math.min(window.devicePixelRatio, 1.5) : 1}
-                eventSource={eventSource as any}
+                eventSource={eventSource as unknown as React.MutableRefObject<HTMLElement>}
                 eventPrefix="page"
             >
                 <Particles />

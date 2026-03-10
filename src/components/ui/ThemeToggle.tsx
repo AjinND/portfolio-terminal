@@ -46,7 +46,7 @@ function DustOverlay({
         const cols = Math.ceil(width / PARTICLE_SIZE);
         const rows = Math.ceil(height / PARTICLE_SIZE);
 
-        const particles: any[] = [];
+        const particles: { x: number; y: number; baseX: number; baseY: number; vx: number; vy: number; active: boolean; size: number; }[] = [];
         for (let i = 0; i < rows; i++) {
             for (let j = 0; j < cols; j++) {
                 const bx = j * PARTICLE_SIZE + PARTICLE_SIZE / 2;

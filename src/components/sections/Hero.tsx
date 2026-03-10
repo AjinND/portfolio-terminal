@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import { contact } from "@/data/content";
 import { ArrowDown, Mail, Github, Linkedin, FileText } from "lucide-react";
 import Link from "next/link";
+import Image from "next/image";
 
 import { useCursorStore } from "@/lib/store";
 import { useEffect, useRef, useState } from "react";
@@ -75,11 +76,13 @@ export function Hero() {
                     WebkitClipPath: clipPathStyle
                 }}
             >
-                {/* Embedded cool generated face. We mix-blend it so the text beneath remains slightly legible or layered */}
-                <img
+                <Image
                     src="/hero-landscape.png"
                     alt="Hero graphic effect"
-                    className="max-w-full max-h-full w-auto h-auto opacity-70 mix-blend-multiply dark:mix-blend-screen"
+                    fill
+                    priority
+                    quality={100}
+                    className="object-cover opacity-70 mix-blend-multiply dark:mix-blend-screen"
                     style={{
                         maskImage: 'radial-gradient(ellipse at center, black 30%, transparent 70%)',
                         WebkitMaskImage: 'radial-gradient(ellipse at center, black 30%, transparent 70%)'
