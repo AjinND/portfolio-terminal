@@ -1,25 +1,29 @@
 # portfolio-terminal
 
-A simple portfolio website styled to look like a terminal. Built with Next.js (App Router) and Tailwind CSS.
+A modern, highly interactive personal portfolio website. Built with Next.js (App Router), Tailwind CSS, Framer Motion, and GSAP.
 
-This repository contains a small personal portfolio that mimics a terminal interface where visitors can type commands to view about information, projects, and contact details.
+This repository contains a single-page portfolio layout featuring a glassmorphism design system, integrated 3D particle backgrounds, animated components, and responsive sections for projects, skills, and professional experience.
 
 ## Features
 
-- Terminal-like UI and keyboard-driven navigation
-- Responsive layout
-- Projects list and links to source/deployments
-- Lightweight and easy to customize
+- Modern UI with Framer Motion animations and GSAP scrolling effects
+- Interactive 3D particle background using React Three Fiber
+- Responsive Layout (Mobile First approach)
+- Custom cursor implementation and Theme Toggle (Dark/Light mode)
+- Componentized architecture for easy updates and scalable sections
 
 ## Tech stack
 
 - Next.js (App Router)
 - React + TypeScript
 - Tailwind CSS
+- Framer Motion & GSAP
+- React Three Fiber (3D Elements)
+- Zustand (Global State)
 
 ## Getting started
 
-Prerequisites: Node.js (>= 16) and npm, yarn, or pnpm.
+Prerequisites: Node.js (>= 18) and npm, yarn, or pnpm.
 
 1. Install dependencies
 
@@ -52,12 +56,18 @@ npm run start
 
 ## Project structure (important files)
 
-- `app/` - Next.js App Router pages and global styles
-	- `page.tsx` - Main page (terminal UI)
-	- `layout.tsx` - Global layout
+- `src/app/` - Next.js App Router pages and global styles
+	- `page.tsx` - Main page rendering the site architecture
+	- `layout.tsx` - Global layout and providers configurations
 	- `globals.css` - Tailwind and global styles
+- `src/components/` - Reusable UI components
+	- `layout/` - Shell structural elements (Navbar, Footer, SmoothScroll, Cursor)
+	- `sections/` - Primary page sections (Hero, About, Experience, Projects)
+	- `ui/` - Abstracted UI elements (ThemeToggle)
+	- `canvas/` - WebGL and 3D implementations
+- `src/data/content.ts` - Centralized JSON data store used for populating portfolio texts and lists
 - `public/` - Static assets
-- `src/hooks/` - Custom hooks (e.g., input history handling)
+
 
 ## Customize
 
