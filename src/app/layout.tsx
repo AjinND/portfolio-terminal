@@ -1,6 +1,9 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
+import { Providers } from "./providers";
+import { SmoothScroll } from "@/components/layout/SmoothScroll";
+import { CustomCursor } from "@/components/layout/CustomCursor";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -14,8 +17,8 @@ const geistMono = localFont({
 });
 
 export const metadata: Metadata = {
-  title: "Portfolio",
-  description: "Portfolio created by Ajin",
+  title: "Ajin N D | Portfolio",
+  description: "Portfolio created by Ajin N D",
 };
 
 export default function RootLayout({
@@ -24,12 +27,18 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased bg-zinc-50 dark:bg-[#0a0a0a] text-zinc-900 dark:text-zinc-50 transition-colors duration-300 cursor-none`}
       >
-        {children}
+        <Providers>
+          <SmoothScroll>
+            <CustomCursor />
+            {children}
+          </SmoothScroll>
+        </Providers>
       </body>
     </html>
   );
 }
+
